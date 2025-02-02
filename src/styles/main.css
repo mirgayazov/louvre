@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 24px;
+  }
+}

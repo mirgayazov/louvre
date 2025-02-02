@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/index.css">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' file:;">
+  <title>Louvre</title>
+</head>
+<body>
+<h1>Louvre</h1>
+<button id="select-folder">Select folder</button>
+<p id="folder-path">No folder selected</p>
+
+<div id="sort-controls" class="sort-controls" style="display: none;">
+  <div class="sort-group">
+    <label for="sort-type">Sort by:</label>
+    <select id="sort-type" class="sort-select">
+      <option value="filename">Filename</option>
+      <option value="filesize">File size</option>
+      <option value="dimensions">Image size</option>
+      <option value="created">Creation date</option>
+      <option value="modified">Modification date</option>
+    </select>
+  </div>
+  <div class="sort-group">
+    <button id="sort-asc" class="sort-direction active">Ascending</button>
+    <button id="sort-desc" class="sort-direction">Descending</button>
+  </div>
+</div>
+<div id="loader-container" class="loader-container" style="display: none;">
+  <div class="loader-content">
+    <div class="loader"></div>
+    <div class="loader-text">
+      <div id="loader-status">Scanning directory...</div>
+      <div id="loader-progress">Images found: <span id="loader-count">0</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="stats" class="stats" style="display: none;">
+  Images found: <span id="images-count">0</span>
+</div>
+<div id="image-modal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="modal-title"></h3>
+      <div class="modal-controls">
+        <button id="zoom-out" class="zoom-button" title="Уменьшить">−</button>
+        <span id="zoom-level">100%</span>
+        <button id="zoom-in" class="zoom-button" title="Увеличить">+</button>
+        <button id="close-modal" class="close-button">&times;</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-image-container">
+        <img id="modal-image" src="" alt="">
+      </div>
+      <div class="modal-info">
+        <table class="info-table">
+          <tr>
+            <td>File size:</td>
+            <td id="modal-size"></td>
+          </tr>
+          <tr>
+            <td>Resolution:</td>
+            <td id="modal-dimensions"></td>
+          </tr>
+          <tr>
+            <td>Created:</td>
+            <td id="modal-created"></td>
+          </tr>
+          <tr>
+            <td>Modified:</td>
+            <td id="modal-modified"></td>
+          </tr>
+          <tr>
+            <td>Path:</td>
+            <td id="modal-path"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="file-list" class="file-list"></div>
+<script src="../dist/bundle.js"></script>
+</body>
+</html>

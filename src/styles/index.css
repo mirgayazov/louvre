@@ -1,0 +1,8 @@
+@import 'main.css';
+@import 'components/button.css';
+@import 'components/folder-path.css';
+@import 'components/sort-controls.css';
+@import 'components/stats.css';
+@import 'components/gallery.css';
+@import 'components/loader.css';
+@import 'components/modal.css';

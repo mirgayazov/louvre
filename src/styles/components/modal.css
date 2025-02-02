@@ -1,0 +1,125 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: modalAppear 0.3s ease-out;
+}
+
+.modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.modal-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: auto;
+  position: relative;
+  max-height: 60vh;
+}
+
+.modal-image-container img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+}
+
+.modal-info {
+  flex-shrink: 0;
+}
+
+.modal-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#zoom-level {
+  font-size: 14px;
+  color: #666;
+  min-width: 60px;
+  text-align: center;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-table td:first-child {
+  color: #666;
+  width: 120px;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-body {
+    flex-direction: row;
+  }
+
+  .modal-image-container {
+    flex: 1;
+  }
+
+  .modal-info {
+    width: 300px;
+  }
+}
